@@ -39,7 +39,7 @@ android {
         buildConfigField "String", "REST_URL", '"https://api.github.com/"'
         buildConfigField "String", "IMGUR_URL", '"https://api.imgur.com/3/"'
         multiDexEnabled true
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath true
@@ -186,6 +186,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test:rules:1.0.1'
     androidTestImplementation "com.android.support.test.espresso:espresso-intents:${espresseVersion}"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:${espresseVersion}"
+
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+    androidTestImplementation group: 'androidx.test', name: 'runner', version: '1.1.1'
+    androidTestImplementation group: 'androidx.test', name: 'core', version: '1.1.0'
+
 }
 
 apply plugin: 'com.google.gms.google-services'

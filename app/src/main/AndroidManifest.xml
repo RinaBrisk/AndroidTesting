@@ -30,6 +30,10 @@
         android:theme="@style/SplashTheme"
         tools:replace="android:allowBackup"
         tools:targetApi="n">
+        <uses-library android:name="android.test.base"
+            android:required="false" />
+        <uses-library android:name="android.test.mock"
+            android:required="false" />
         <activity
             android:name=".ui.modules.main.donation.CheckPurchaseActivity"
             android:configChanges="keyboard|orientation|screenSize"
