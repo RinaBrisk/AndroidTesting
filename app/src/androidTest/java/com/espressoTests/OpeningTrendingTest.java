@@ -2,17 +2,14 @@ package com.espressoTests;
 
 import android.support.test.espresso.contrib.NavigationViewActions;
 import android.support.test.espresso.contrib.ViewPagerActions;
-import android.support.test.espresso.intent.rule.IntentsTestRule;
 import android.support.test.filters.LargeTest;
-import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import com.fastaccess.App;
 import com.fastaccess.R;
 import com.fastaccess.data.dao.SettingsModel;
 import com.fastaccess.helper.ViewHelper;
-import com.fastaccess.ui.modules.main.MainActivity;
+import com.pages.TrendingPage;
 
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -20,35 +17,22 @@ import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.typeText;
-import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.contrib.DrawerActions.open;
 import static android.support.test.espresso.intent.Intents.intended;
 import static android.support.test.espresso.intent.matcher.IntentMatchers.toPackage;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.CoreMatchers.anything;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class OpeningTrendingTest {
-
-    @Rule
-    public ActivityTestRule<MainActivity> activityScenarioRule
-            = new ActivityTestRule<>(MainActivity.class);
+public class OpeningTrendingTest extends BaseRunner{
 
     @Test
     public void openingTrending() {
-        // Открыть меню
-        onView(withId(R.id.drawer)) //driverLayout
-                .perform(open());
 
-        // Кликнуть на «Trending»
-        onView(withId(R.id.mainNav)) //menuNav
-                .perform(NavigationViewActions.navigateTo(R.id.trending));
-
-        // Ожидаемый результат: открылось окно «Trending»
-        onView(withId(R.id.trendingFragment)) //trendingFragment
-            .check(matches(isDisplayed()));
+        TrendingPage trendingPage = new TrendingPage();
+        trendingPage.openPage();
+        trendingPage.isOpened();
     }
 
     @Test
