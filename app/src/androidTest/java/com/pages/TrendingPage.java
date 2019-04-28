@@ -21,8 +21,7 @@ public class TrendingPage {
     public void openPage(){
 
         NavigationDrawer navigationDrawer = new NavigationDrawer();
-        navigationDrawer.getDriverLayout()
-                .perform(open());
+        navigationDrawer.openPage();
 
         navigationDrawer.getMenuNav()
                 .perform(NavigationViewActions.navigateTo(R.id.trending));

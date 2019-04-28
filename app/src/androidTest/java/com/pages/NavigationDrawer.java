@@ -6,6 +6,7 @@ import com.fastaccess.R;
 import com.fastaccess.ui.modules.main.pullrequests.pager.MyPullsPagerMvp;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.contrib.DrawerActions.open;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
 public class NavigationDrawer {
@@ -24,5 +25,9 @@ public class NavigationDrawer {
 
     public ViewInteraction getMenuNav() {
         return menuNav;
+    }
+
+    public void openPage(){
+        driverLayout.perform(open());
     }
 }
