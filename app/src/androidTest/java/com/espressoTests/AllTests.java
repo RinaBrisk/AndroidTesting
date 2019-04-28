@@ -3,8 +3,9 @@ package com.espressoTests;
 import android.support.test.espresso.contrib.NavigationViewActions;
 import android.support.test.filters.LargeTest;
 import android.support.test.runner.AndroidJUnit4;
+
 import com.fastaccess.R;
-import com.pages.NavigationDrawer;
+import com.elements.NavigationDrawer;
 import com.pages.SendFeedbackPage;
 import com.pages.SettingPage;
 import com.pages.ThemePage;
@@ -20,7 +21,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class OpeningTrendingTest extends BaseRunner{
+public class AllTests extends BaseRunner{
 
     @Test
     public void openingTrending() {
@@ -40,11 +41,16 @@ public class OpeningTrendingTest extends BaseRunner{
         ThemePage themePage = new ThemePage();
         themePage.selectGreyTheme();
         themePage.checkGreyTheme();
+
+        //вернуть изначальную тему
+        settingPage.openPage();
+        settingPage.isSelectTheme();
+        themePage.selectWhiteTheme();
     }
 
   //  @Rule
   //  public IntentsTestRule<MainActivity> intentsTestRule =
-   //         new IntentsTestRule<>(MainActivity.class);
+    //         new IntentsTestRule<>(MainActivity.class);
 
     @Test
     public void restorePurchases(){

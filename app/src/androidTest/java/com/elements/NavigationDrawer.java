@@ -1,9 +1,8 @@
-package com.pages;
+package com.elements;
 
 import android.support.test.espresso.ViewInteraction;
 
 import com.fastaccess.R;
-import com.fastaccess.ui.modules.main.pullrequests.pager.MyPullsPagerMvp;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.contrib.DrawerActions.open;
@@ -17,10 +16,6 @@ public class NavigationDrawer {
     public NavigationDrawer(){
         driverLayout = onView(withId(R.id.drawer));
         menuNav = onView(withId(R.id.mainNav));
-    }
-
-    public ViewInteraction getDriverLayout() {
-        return driverLayout;
     }
 
     public ViewInteraction getMenuNav() {

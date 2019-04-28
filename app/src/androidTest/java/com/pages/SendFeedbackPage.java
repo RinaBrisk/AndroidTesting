@@ -2,6 +2,7 @@ package com.pages;
 
 import android.support.test.espresso.contrib.NavigationViewActions;
 
+import com.elements.NavigationDrawer;
 import com.fastaccess.R;
 
 public class SendFeedbackPage {

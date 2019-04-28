@@ -1,9 +1,9 @@
 package com.pages;
 
 import android.support.test.espresso.DataInteraction;
-import android.support.test.espresso.ViewInteraction;
 import android.support.test.espresso.contrib.NavigationViewActions;
 
+import com.elements.NavigationDrawer;
 import com.fastaccess.R;
 import com.fastaccess.data.dao.SettingsModel;
 

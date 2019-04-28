@@ -16,7 +16,7 @@
 //import static junit.framework.TestCase.assertTrue;
 //import static org.junit.Assert.assertEquals;
 //
-//public class OpeningTrendingTest extends BaseRunner {
+//public class AllTests extends BaseRunner {
 //
 //    @Test
 //    public void openingTrending() throws UiObjectNotFoundException {

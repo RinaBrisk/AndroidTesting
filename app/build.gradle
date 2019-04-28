@@ -193,6 +193,8 @@ dependencies {
     implementation group: 'com.android.support', name: 'appcompat-v7', version: '27.1.1'
     implementation group: 'com.android.support', name: 'design', version: '27.1.1'
     androidTestImplementation group: 'com.android.support.test.espresso', name: 'espresso-intents', version: '3.0.1'
+    androidTestImplementation group: 'junit', name: 'junit', version: '4.12'
+
 
 
 }
