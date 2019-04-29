@@ -21,11 +21,9 @@ public class SettingPage{
     }
 
     public void openPage(){
+        NavigationDrawer.getNavigationDrawer().openPage();
 
-        NavigationDrawer navigationDrawer = new NavigationDrawer();
-        navigationDrawer.openPage();
-
-        navigationDrawer.getMenuNav()
+        NavigationDrawer.getNavigationDrawer().getMenuNav()
                 .perform(NavigationViewActions.navigateTo(R.id.settings));
     }
 

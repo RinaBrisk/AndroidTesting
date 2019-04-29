@@ -4,8 +4,11 @@ import android.support.test.espresso.contrib.NavigationViewActions;
 import android.support.test.filters.LargeTest;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.fastaccess.App;
 import com.fastaccess.R;
 import com.elements.NavigationDrawer;
+import com.fastaccess.helper.PrefGetter;
+import com.fastaccess.helper.ViewHelper;
 import com.pages.SendFeedbackPage;
 import com.pages.SettingPage;
 import com.pages.ThemePage;
@@ -41,23 +44,12 @@ public class AllTests extends BaseRunner{
         ThemePage themePage = new ThemePage();
         themePage.selectGreyTheme();
         themePage.checkGreyTheme();
-
-        //вернуть изначальную тему
-        settingPage.openPage();
-        settingPage.isSelectTheme();
-        themePage.selectWhiteTheme();
     }
-
-  //  @Rule
-  //  public IntentsTestRule<MainActivity> intentsTestRule =
-    //         new IntentsTestRule<>(MainActivity.class);
 
     @Test
     public void restorePurchases(){
-        NavigationDrawer navigationDrawer = new NavigationDrawer();
-        navigationDrawer.openPage();
-
-        navigationDrawer.getMenuNav()
+        NavigationDrawer.getNavigationDrawer().openPage();
+        NavigationDrawer.getNavigationDrawer().getMenuNav()
                 .perform(NavigationViewActions.navigateTo(R.id.restorePurchase));
 
         // Ожидаемый результат: отправился Intent(activity, CheckPurchaseActivity::class.java) ??

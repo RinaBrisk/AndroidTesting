@@ -12,10 +12,15 @@ public class NavigationDrawer {
 
     private ViewInteraction driverLayout;
     private ViewInteraction menuNav;
+    private static NavigationDrawer navigationDrawer = new NavigationDrawer();
 
     public NavigationDrawer(){
         driverLayout = onView(withId(R.id.drawer));
         menuNav = onView(withId(R.id.mainNav));
+    }
+
+    public static NavigationDrawer getNavigationDrawer(){
+        return navigationDrawer;
     }
 
     public ViewInteraction getMenuNav() {
